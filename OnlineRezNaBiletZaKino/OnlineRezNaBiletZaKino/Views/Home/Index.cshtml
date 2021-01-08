@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Онлајн резервација на билет за кино</h1>
+    <p class="lead">Проект по бази на податоци 2020/2021</p>
+    <p class="lead">Марија Трајковска 181023</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Филм на годината</h2>
+        <p>
+            Филмот на годината се избира врз основа на бројот на распродадени карти.
+        </p>
+        <p>
+            @Html.ActionLink("Погледни го филмот", "Index", "FilmNaGodina")
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Најредовен корисник</h2>
+        <p>Најредовните корисници се одбираат врз основа на прометот кој го прават.</p>
+        <p>
+            @Html.ActionLink("Погледни ги корисниците", "NajredovenKorisnik", "NajredovenKorisnik")
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Просечен промет на киното по месец</h2>
+        <p>
+            @Html.ActionLink("Погледни го просечниот промет", "ProsecenPromet", "ProsecenPromet")
+        </p>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<OnlineRezNaBiletZaKino.Models.Proekcija>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Сите проекции</h2>
+
+<table class="table" id="proekcijaTable">
+    <thead>
+        <tr>
+            <th>
+                Ид проекција
+            </th>
+            <th>
+                Ид филм
+            </th>
+            <th>
+                Време почеток
+            </th>
+            <th>
+                Време крај
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_proekcija)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_film)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vreme_pocetok)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vreme_kraj)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id_p=item.id_proekcija, id_f=item.id_film }) |
+                @Html.ActionLink("Details", "Details", new { id_p = item.id_proekcija, id_f = item.id_film }) |
+                @Html.ActionLink("Delete", "Delete", new { id_p = item.id_proekcija, id_f = item.id_film })
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>

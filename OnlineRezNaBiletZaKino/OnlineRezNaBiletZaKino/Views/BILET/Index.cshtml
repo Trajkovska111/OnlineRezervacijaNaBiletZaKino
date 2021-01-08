@@ -1,0 +1,72 @@
+﻿@model IEnumerable<OnlineRezNaBiletZaKino.Models.BILET>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Табела за билети</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.e_mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vreme_na_rezervacija)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_proekcija)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_film)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.broj_sala)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.broj_sediste)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.broj_red)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.e_mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vreme_na_rezervacija)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_proekcija)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_film)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.broj_sala)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.broj_sediste)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.broj_red)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_bilet }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_bilet }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_bilet })
+        </td>
+    </tr>
+}
+
+</table>

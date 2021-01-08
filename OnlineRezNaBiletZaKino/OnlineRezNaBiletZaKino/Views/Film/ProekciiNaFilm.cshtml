@@ -1,0 +1,81 @@
+﻿@model IEnumerable<OnlineRezNaBiletZaKino.Models.ProekcijaNaFilm>
+
+@{
+    ViewBag.Title = "ProekciiNaFilm";
+}
+
+<h2>Проекции на филмот</h2>
+
+<p>
+    @Html.ActionLink("Додади нова проекција", "NovaProekcija", "ProekcijaProbaZaCreate")
+</p>
+<table class="table" id="proekciiTable">
+    <thead>
+        <tr>
+            <th>
+               ID на проекција
+            </th>
+            <th>
+                ID на филм
+            </th>
+            <th>
+                Име на филм
+            </th>
+            <th>
+                Технологија
+            </th>
+            <th>
+                Датум на проекција
+            </th>
+            <th>
+                Време на почеток
+            </th>
+            <th>
+                Број на сала
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_proekcija)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_film)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ime_film)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tehnologija)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.datum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vreme_pocetok)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.broj_sala)
+            </td>
+            <td>
+                @Html.ActionLink("Резервирај", "Rezervacija", "BILET")
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<p>
+    @Html.ActionLink("Назад кон филмовите", "Index")
+</p>
+@section scripts{
+
+    <script>
+        $("#proekciiTable").DataTable();
+    </script>
+
+}
+

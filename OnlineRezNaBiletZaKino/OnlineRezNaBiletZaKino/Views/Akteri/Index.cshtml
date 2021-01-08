@@ -1,0 +1,44 @@
+﻿@model IEnumerable<OnlineRezNaBiletZaKino.Models.Akter>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Актери</h2>
+
+<table class="table" id="akteriTable">
+    <thead>
+        <tr>
+            <th>
+                Ид филм
+            </th>
+            <th>
+                Актер
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id_film)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.akteri)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    @Html.ActionLink("Назад кон филмовите", "Index")
+</p>
+@section scripts{
+
+    <script>
+        $("#akteriTable").DataTable();
+    </script>
+
+}
+

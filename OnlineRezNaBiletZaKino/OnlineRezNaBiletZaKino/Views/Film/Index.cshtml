@@ -1,0 +1,78 @@
+﻿@model IEnumerable<OnlineRezNaBiletZaKino.Models.Film>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Достапни филмови</h2>
+
+<p>
+    @Html.ActionLink("Додади нов филм", "NovFilm" )
+</p>
+<table class="table" id="movieTable">
+    <thead>
+        <tr>
+            <th>
+                Име
+            </th>
+            <th>
+                Режисер
+            </th>
+            <th>
+                Времетраење
+            </th>
+            <th>
+                Жанр
+            </th>
+            <th>
+                Технологија
+            </th>
+            <th>
+                Слика
+            </th>
+            <th>
+                Возрасна категорија
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ime_film)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.reziser)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vremetraenje)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.zanr)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tehnologija)
+                </td>
+                <td>
+                    <img style="max-width:200px" src="@item.film_url" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vozrasna_kategorija)
+                </td>
+                <td>
+                    @Html.ActionLink("Проекции на филмот", "ProekciiNaFilm", new { id = item.id_film }, new { @class = "btn btn-primary" })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts{
+
+    <script>
+            $("#movieTable").DataTable();
+    </script>
+
+}

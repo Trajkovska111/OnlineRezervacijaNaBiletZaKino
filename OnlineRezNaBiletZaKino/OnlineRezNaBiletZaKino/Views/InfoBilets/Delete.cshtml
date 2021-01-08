@@ -1,0 +1,96 @@
+﻿@model OnlineRezNaBiletZaKino.Models.InfoBilet
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>InfoBilet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Korisnik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Korisnik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ime_film)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime_film)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tehnologija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tehnologija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vreme_pocnuvanje)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vreme_pocnuvanje)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sala)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sala)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sediste)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sediste)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Red)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Red)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

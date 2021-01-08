@@ -1,0 +1,95 @@
+﻿@model OnlineRezNaBiletZaKino.Models.BILET
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Резервација на билет</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label class="control-label col-md-2">Цена</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.cena, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.cena, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Е-маил</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.e_mail, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.e_mail, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Време на резервација</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.vreme_na_rezervacija, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.vreme_na_rezervacija, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">ID на проекција</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.id_proekcija, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.id_proekcija, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">ID на филм</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.id_film, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.id_film, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Број на сала</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.broj_sala, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.broj_sala, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Број на седиште</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.broj_sediste, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.broj_sediste, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Број на ред</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.broj_red, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.broj_red, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Назад кон филмови", "Index", "Film")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

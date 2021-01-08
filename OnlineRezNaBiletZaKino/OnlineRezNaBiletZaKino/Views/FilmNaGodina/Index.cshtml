@@ -1,0 +1,38 @@
+﻿@model IEnumerable<OnlineRezNaBiletZaKino.Models.FilmNaGodinata>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Филмови на годината</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Име на филм
+        </th>
+        <th>
+            Година
+        </th>
+        <th>
+            Број на распродадени билети
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ime)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Godina)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Bileti)
+    </td>
+    
+</tr>
+}
+
+</table>

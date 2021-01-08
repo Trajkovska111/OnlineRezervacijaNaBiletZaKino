@@ -1,0 +1,86 @@
+﻿@model IEnumerable<OnlineRezNaBiletZaKino.Models.InfoBilet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Информации за билетите</h2>
+
+<table class="table" id="biletiTable">
+    <thead>
+        <tr>
+            <th>
+                Корисник
+            </th>
+            <th>
+                Цена на билетот
+            </th>
+            <th>
+                Име на филмот
+            </th>
+            <th>
+                Технологија
+            </th>
+            <th>
+                Датум на проекција
+            </th>
+            <th>
+                Време на почеток
+            </th>
+            <th>
+                Број на сала
+            </th>
+            <th>
+                Број на седиште
+            </th>
+            <th>
+                Број на ред
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Korisnik)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cena)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ime_film)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tehnologija)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Datum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vreme_pocnuvanje)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sala)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sediste)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Red)
+                </td>
+               <td>
+
+               </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts{
+
+    <script>
+            $("#biletiTable").DataTable();
+    </script>
+
+}

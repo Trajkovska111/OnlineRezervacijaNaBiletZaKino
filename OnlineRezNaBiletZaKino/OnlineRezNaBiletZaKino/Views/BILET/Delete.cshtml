@@ -1,0 +1,88 @@
+﻿@model OnlineRezNaBiletZaKino.Models.BILET
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>BILET</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.e_mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.e_mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vreme_na_rezervacija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vreme_na_rezervacija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_proekcija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_proekcija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_film)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_film)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.broj_sala)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.broj_sala)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.broj_sediste)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.broj_sediste)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.broj_red)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.broj_red)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

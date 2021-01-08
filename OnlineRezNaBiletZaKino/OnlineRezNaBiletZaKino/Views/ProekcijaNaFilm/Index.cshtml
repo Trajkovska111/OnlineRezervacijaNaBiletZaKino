@@ -1,0 +1,68 @@
+﻿@model IEnumerable<OnlineRezNaBiletZaKino.Models.ProekcijaNaFilm>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" id="proekciiTable">
+    <thead>
+        <tr>
+            <th>
+                Име на филм
+            </th>
+            <th>
+                Технологија
+            </th>
+            <th>
+                Датум на проекција
+            </th>
+            <th>
+                Време на почеток
+            </th>
+            <th>
+                Број на сала
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ime_film)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tehnologija)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.datum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vreme_pocetok)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.broj_sala)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id_film }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id_film }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id_film })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+    @section scripts{
+
+        <script>
+            $("#proekciiTable").DataTable();
+        </script>
+
+    }

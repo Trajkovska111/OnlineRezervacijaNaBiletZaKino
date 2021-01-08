@@ -1,0 +1,40 @@
+﻿@model IEnumerable<OnlineRezNaBiletZaKino.Models.NajredovenKorisnik>
+
+@{
+    ViewBag.Title = "NajredovenKorisnik";
+}
+
+<h2>Најредовни Корисници</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Корисничко име
+        </th>
+        <th>
+            Потрошена сума на билети
+        </th>
+        <th>
+            Вкупен број на билети
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Korisnicko_ime)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Suma_od_bileti)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Broj_bileti)
+    </td>
+</tr>
+}
+
+</table>

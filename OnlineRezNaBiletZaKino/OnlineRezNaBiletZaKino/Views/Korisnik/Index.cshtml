@@ -1,0 +1,45 @@
+﻿@model IEnumerable<OnlineRezNaBiletZaKino.Models.Korisnik>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Корисници</h2>
+
+<p>
+    @Html.ActionLink("Додади корисник", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Е-маил
+        </th>
+        <th>
+            Корисничко име
+        </th>
+        <th>
+            Password
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.e_mail)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.korisnicko_ime)
+    </td>
+    <td>
+        ********
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.e_mail }) |
+        @Html.ActionLink("Details", "Details", new { id = item.e_mail }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.e_mail })
+    </td>
+</tr>
+}
+
+</table>
